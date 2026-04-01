@@ -1,0 +1,20 @@
+
+.container {
+  display: flex;
+  height: 100vh; 
+  background-color: #F9DBBD;
+  font-family: 'Lato';
+  color: #291711;
+}
+
+.sidebar {
+  width: 35%;
+  padding: 20px;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Lato';
+}
+
+.live-preview {
+  padding: 20px;
+  width: 65%;
+}

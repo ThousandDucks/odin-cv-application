@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+
+    padding: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #291711;
+}
+
+.download {
+    fill: #291711;
+    width: 35px;
+    height: 35px;
+}

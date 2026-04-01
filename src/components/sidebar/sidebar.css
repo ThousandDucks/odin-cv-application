@@ -1,0 +1,48 @@
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 2px solid #291711;
+    font-weight: bold;
+    
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form settings */
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+}
+
+.subheader {
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+/* Personal Information Section */
+
+.personal-info {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #291711;
+}
+
+
+.personal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/*  */
