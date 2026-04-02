@@ -5,6 +5,11 @@
   background-color: #F9DBBD;
   font-family: 'Lato';
   color: #291711;
+  overflow: hidden;
+}
+
+* {
+    font-family: 'Lato';
 }
 
 .sidebar {
@@ -12,9 +17,11 @@
   padding: 20px;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
   font-family: 'Lato';
+  overflow: auto;
 }
 
 .live-preview {
   padding: 20px;
   width: 65%;
+  overflow: auto;
 }
