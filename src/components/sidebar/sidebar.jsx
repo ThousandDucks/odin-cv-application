@@ -1,7 +1,7 @@
 import '../sidebar/sidebar.css'
+import Education from '../sidebar/education'
 
-
-function Sidebar({cvData, setCvData}) {
+function Sidebar({cvData, setCvData, educationList, setEducationList}) {
     const handleChange = (e) => {
         const { id, value } = e.target;
 
@@ -39,8 +39,12 @@ function Sidebar({cvData, setCvData}) {
                     </section>
 
                     
-                    <section className='persona-info'>
+                    <section className='education-info'>
                         <div className='subheader'>Education</div>
+                        <Education 
+                            educationList={educationList} 
+                            setEducationList={setEducationList} 
+                        />
                     </section>
 
                 </form>

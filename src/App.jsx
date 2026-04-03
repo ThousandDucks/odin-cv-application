@@ -11,14 +11,21 @@ function App() {
     email: ""
   });
 
+  const [educationList, setEducationList] = useState([]);
+
   return (
     <div className="container">
       <aside className="sidebar">
-        <Sidebar cvData={cvData} setCvData={setCvData} />
+        <Sidebar 
+        cvData={cvData} 
+        setCvData={setCvData} 
+        educationList={educationList} 
+        setEducationList={setEducationList} 
+        />
       </aside>
 
       <main className="live-preview">
-        <Preview cvData={cvData} />
+        <Preview cvData={cvData} educationList={educationList} />
       </main>
     </div>
   )

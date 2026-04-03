@@ -1,7 +1,7 @@
 
 import '../live-preview/preview.css'
 
-function Preview({ cvData }) {
+function Preview({ cvData, educationList }) {
     return (
         <div className='preview-container'>
             <header className='preview-header'>
@@ -11,9 +11,30 @@ function Preview({ cvData }) {
 
             <section className="preview-wrapper">
                 <div className="preview-page">
-                    <div>{cvData.fullName}</div>
-                    <p>{cvData.phone}</p>
-                    <p>{cvData.email}</p>
+                    <div className='cv-header'>{cvData.fullName}</div>
+                    <div className='cv-personal-info'>
+                        {(cvData.phone || cvData.email) && (
+                            <p className="contact">
+                            {cvData.phone && <span>{cvData.phone}</span>}
+                            {cvData.phone && cvData.email && <span> | </span>}
+                            {cvData.email && <span>{cvData.email}</span>}
+                            </p>
+                        )}
+                    </div>
+
+                    {educationList && educationList.length > 0 && (
+                    <div className="cv-education">
+                        <h3>Education</h3>
+                        {educationList.map((edu, index) => (
+                        <div key={index} className="cv-education-item">
+                            <p><strong>{edu.degree}</strong> at {edu.school}</p>
+                            <p>{edu.startDate} - {edu.endDate}</p>
+                            <p>Grade: {edu.grade}</p>
+                            <p>Location: {edu.location}</p>
+                        </div>
+                        ))}
+                    </div>
+                    )}
                 </div>
             </section>
         </div>

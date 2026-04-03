@@ -2,7 +2,6 @@
     padding: 20px;
     border-bottom: 2px solid #291711;
     font-weight: bold;
-    
 }
 
 .sidebar-container {
@@ -46,5 +45,21 @@
 }
 
 
-/*  */
+/* Education */
 
+.empty-education {
+    border: 2px dashed black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.button-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-button {
+    height: 30px;
+}

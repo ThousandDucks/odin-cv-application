@@ -1,0 +1,21 @@
+.date-container {
+    display: flex;
+    gap: 10px;
+}
+
+.education-form-container {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.education-button-container {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.education-button-container button {
+    width: 50%;
+    height: 30px;
+}
