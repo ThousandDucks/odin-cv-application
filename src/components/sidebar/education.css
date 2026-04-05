@@ -19,3 +19,38 @@
     width: 50%;
     height: 30px;
 }
+
+.education-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background: #f9f9f9;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.education-card-info {
+    text-align: start;
+}
+
+.education-card-image{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-pic {
+    fill: white;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.education-card-info-summary {
+    font-size: 16px;
+}

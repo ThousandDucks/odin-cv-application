@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function Education( { educationList, setEducationList }) {
     const [showForm, setShowForm] = useState(false);
+    const [editIndex, setEditIndex] = useState(null);
     const [formData, setFormData] = useState({
     school: "",
     degree: "",
@@ -14,22 +15,63 @@ function Education( { educationList, setEducationList }) {
     });
 
     function handleSubmit() {
+    if (editIndex !== null) {
+        const updatedList = [...educationList];
+        updatedList[editIndex] = formData;
+        setEducationList(updatedList);
+        setEditIndex(null);
+    } else {
         setEducationList([...educationList, formData]);
-        setFormData({
-            school: "",
-            degree: "",
-            startDate: "",
-            endDate: "",
-            grade: "",
-            location: "",
-        });
-        setShowForm(false);
     }
 
+    setFormData({
+        school: "",
+        degree: "",
+        startDate: "",
+        endDate: "",
+        grade: "",
+        location: "",
+    });
+
+    setShowForm(false);
+    }
+
+    function handleEdit(index) {
+        setFormData(educationList[index]); 
+        setEditIndex(index);               
+        setShowForm(true);                
+    }
+
+    function handleDelete(index) {
+        const updatedList = educationList.filter((_, i) => i !== index);
+        setEducationList(updatedList);
+
+        if (editIndex === index) {
+            setEditIndex(null);
+            setShowForm(false);
+        }
+    }
 
     return (
         <div className='button-form-container'>
-            <div className='empty-education'>Enter Education Information</div>
+            {educationList.length === 0 ? (
+                <div className='empty-education'>Enter Education Information</div>
+            ) : (
+                <div className='education-summary'>
+                    {educationList.map((edu, index) => (
+                        <div key={index} className='education-card'>
+                            <div className='education-card-info'>
+                                <p><strong>{edu.school}</strong></p>
+                                <p className='education-card-info-summary'>{edu.degree}, {edu.startDate} - {edu.endDate}</p>
+                            </div>
+                            <div className='education-card-image'>
+                                <svg onClick={() => handleEdit(index)} className='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>square-edit-outline</title><path d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" /></svg>
+                                <svg onClick={() => handleDelete(index)} className='icon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>delete-outline</title><path d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" /></svg>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
             
             {showForm && (<div className='education-form-container'>
                 <div className='form-item'>
@@ -73,7 +115,20 @@ function Education( { educationList, setEducationList }) {
             
 
             {!showForm && (
-                <button type="button" className='add-button' onClick={() => setShowForm(true)}>+ Add Education</button>
+                <button type="button" className='add-button'
+                onClick={() => {
+                setFormData({
+                    school: "",
+                    degree: "",
+                    startDate: "",
+                    endDate: "",
+                    grade: "",
+                    location: "",
+                });
+                setEditIndex(null); // important!
+                setShowForm(true);
+                }}
+                >+ Add Education</button>
             )}
             
         </div>
