@@ -39,28 +39,28 @@ function Education( { educationList, setEducationList }) {
 
                 <div className='form-item'>
                     <label htmlFor='degree-title'>Degree Title</label>
-                    <input className='form-input' id='degree-title'></input>
+                    <input value={formData.degree} onChange={(e) => setFormData({ ...formData, degree: e.target.value })} className='form-input' id='degree-title'></input>
                 </div>
 
                 <div className='date-container'>
                     <div className='form-item'>
                         <label htmlFor='start-date'>Start Date</label>
-                        <input className='form-input' id='start-date' type='date'></input>
+                        <input value={formData.startDate} onChange={(e) => setFormData({ ...formData, startDate: e.target.value })} className='form-input' id='start-date' type='month'></input>
                     </div>
                     <div className='form-item'>
                         <label htmlFor='end-date'>End Date</label>
-                        <input className='form-input' id='end-date' type='date'></input>
+                        <input value={formData.endDate} onChange={(e) => setFormData({ ...formData, endDate: e.target.value })} className='form-input' id='end-date' type='month'></input>
                     </div>
                 </div>
 
                 <div className='form-item'>
                     <label htmlFor='grade'>Grade Achieved</label>
-                    <input className='form-input' id='grade'></input>
+                    <input value={formData.grade} onChange={(e) => setFormData({ ...formData, grade: e.target.value })} className='form-input' id='grade'></input>
                 </div>
 
                 <div className='form-item'>
                     <label htmlFor='location-degree'>Location</label>
-                    <input className='form-input' id='location-degree'></input>
+                    <input value={formData.location} onChange={(e) => setFormData({ ...formData, location: e.target.value })} className='form-input' id='location-degree'></input>
                 </div>
 
                 <div className='education-button-container'>

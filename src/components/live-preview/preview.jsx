@@ -24,13 +24,18 @@ function Preview({ cvData, educationList }) {
 
                     {educationList && educationList.length > 0 && (
                     <div className="cv-education">
-                        <h3>Education</h3>
+                        <h3 className='section-header'>Education</h3>
                         {educationList.map((edu, index) => (
                         <div key={index} className="cv-education-item">
-                            <p><strong>{edu.degree}</strong> at {edu.school}</p>
-                            <p>{edu.startDate} - {edu.endDate}</p>
-                            <p>Grade: {edu.grade}</p>
-                            <p>Location: {edu.location}</p>
+                            <div className='cv-education-item-container'>
+                                <p><strong>{edu.school}</strong></p>
+                                <p>{edu.location}</p>
+                            </div>
+
+                            <div className='cv-education-item-container cv-education-item-container-bottom'> 
+                                <p>{edu.degree}, {edu.grade}</p>
+                                <p>{edu.startDate} - {edu.endDate}</p>
+                            </div>
                         </div>
                         ))}
                     </div>

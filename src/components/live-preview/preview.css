@@ -42,7 +42,7 @@
     max-width: 600px; 
     aspect-ratio: 210 / 297;
 
-    padding: 20mm;
+    padding: 10mm;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 
@@ -65,4 +65,27 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.section-header {
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: 2px solid #291711;
+}
+
+.cv-education {
+    text-align: start;
+}
+
+.cv-education-item {
+    padding-left: 20px;
+}
+
+.cv-education-item-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cv-education-item-container-bottom {
+    font-style: italic;
 }
