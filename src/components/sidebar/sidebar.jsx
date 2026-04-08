@@ -1,7 +1,10 @@
 import '../sidebar/sidebar.css'
 import Education from '../sidebar/education'
+import ListFormSection from '../sidebar/listFormSection'
 
-function Sidebar({cvData, setCvData, educationList, setEducationList}) {
+
+function Sidebar({ cvData, setCvData, educationList, setEducationList, employmentList, setEmploymentList, projectsList, setProjectsList}) {
+
     const handleChange = (e) => {
         const { id, value } = e.target;
 
@@ -45,6 +48,37 @@ function Sidebar({cvData, setCvData, educationList, setEducationList}) {
                             educationList={educationList} 
                             setEducationList={setEducationList} 
                         />
+
+                        <div className='subheader'>Employment</div>
+                        <ListFormSection
+                            list={employmentList}
+                            setList={setEmploymentList}
+                            title="Experience"
+                            fields={[
+                            { label: "Company", key: "company" },
+                            { label: "Role", key: "role" },
+                            { label: "Location", key: "location" },
+                            { label: "Start Date", key: "startDate", type: "month" },
+                            { label: "End Date", key: "endDate", type: "month" },
+                            { label: "Description", key: "description", type: "textarea" },
+                            ]}
+                        />
+
+                        <div className='subheader'>Projects</div>
+                        <ListFormSection
+                            list={projectsList}
+                            setList={setProjectsList}
+                            title="Projects"
+                            fields={[
+                                { label: "Project Name", key: "projectName" },
+                                { label: "Description", key: "description", type: "textarea" },
+                                { label: "Skills", key: "skills" },
+                                { label: "Start Date", key: "startDate", type: "month" },
+                                { label: "End Date", key: "endDate", type: "month" },
+                            ]}
+                        />
+
+                        
                     </section>
 
                 </form>

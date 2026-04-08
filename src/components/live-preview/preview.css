@@ -90,3 +90,34 @@
 .cv-education-item-container-bottom {
     font-style: italic;
 }
+
+.cv-employment-item-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.employment-top-right {
+    text-align: end;
+}
+
+.form-input {     
+    resize: vertical;   
+}
+
+.project-top-left {
+    display: flex;
+}
+
+.separator {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.skills {
+    font-style: italic;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+}

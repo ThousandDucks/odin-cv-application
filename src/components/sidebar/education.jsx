@@ -125,7 +125,7 @@ function Education( { educationList, setEducationList }) {
                     grade: "",
                     location: "",
                 });
-                setEditIndex(null); // important!
+                setEditIndex(null); 
                 setShowForm(true);
                 }}
                 >+ Add Education</button>

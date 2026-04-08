@@ -1,7 +1,7 @@
 
 import '../live-preview/preview.css'
 
-function Preview({ cvData, educationList }) {
+function Preview({ cvData, educationList, employmentList, projectsList }) {
     return (
         <div className='preview-container'>
             <header className='preview-header'>
@@ -40,6 +40,47 @@ function Preview({ cvData, educationList }) {
                         ))}
                     </div>
                     )}
+
+                    {employmentList && employmentList.length > 0 && (
+                    <div className="cv-education">
+                        <h3 className='section-header'>Experience</h3>
+                        {employmentList.map((job, index) => (
+                        <div key={index} className="cv-education-item">
+                            <div className='cv-employment-item-container'>
+                                <div className='employment-top-left'>
+                                    <p><strong>{job.role}</strong></p>
+                                    <p>{job.company}</p>
+                                </div>
+                                <div className='employment-top-right'>
+                                    <p>{job.startDate} - {job.endDate}</p>
+                                    <p>{job.location}</p>
+                                </div>
+                            </div>
+                            <p>{job.description}</p>
+                        </div>
+                        ))}
+                    </div>
+                    )}
+
+                    {projectsList && projectsList.length > 0 && (
+                    <div className="cv-education">
+                        <h3 className='section-header'>Projects</h3>
+                        {projectsList.map((project, index) => (
+                        <div key={index} className="cv-education-item">
+                            <div className='project-top'>
+                                <div className='project-top-left'>
+                                    <p><strong>{project.projectName}</strong></p>
+                                    <p className='separator'> | </p>
+                                    <p className='skills'>{project.skills}</p>
+                                </div>
+                                <p>{project.startDate} - {project.endDate}</p>
+                            </div>
+                            <p>{project.description}</p>
+                        </div>
+                        ))}
+                    </div>
+                    )}
+                    
                 </div>
             </section>
         </div>

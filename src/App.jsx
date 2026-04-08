@@ -12,20 +12,32 @@ function App() {
   });
 
   const [educationList, setEducationList] = useState([]);
+  const [projectsList, setProjectsList] = useState([]);
+  const [employmentList, setEmploymentList] = useState([]);
+
 
   return (
     <div className="container">
       <aside className="sidebar">
         <Sidebar 
-        cvData={cvData} 
-        setCvData={setCvData} 
-        educationList={educationList} 
-        setEducationList={setEducationList} 
+          cvData={cvData} 
+          setCvData={setCvData} 
+          educationList={educationList} 
+          setEducationList={setEducationList}
+          projectsList={projectsList}
+          setProjectsList={setProjectsList}
+          employmentList={employmentList}
+          setEmploymentList={setEmploymentList}
         />
       </aside>
 
       <main className="live-preview">
-        <Preview cvData={cvData} educationList={educationList} />
+        <Preview 
+          cvData={cvData} 
+          educationList={educationList} 
+          projectsList={projectsList} 
+          employmentList={employmentList} 
+        />
       </main>
     </div>
   )
